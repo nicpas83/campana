@@ -13,14 +13,14 @@
     <tablemaint file="RelevamientosArboladoMaint.php">
         
         <fieldset title="RelevamientosArbolado" columns="2" id="inicio" >
-            <field name="prestacion_id" label="Tipo de Prestación" presentation="PRESTACIONES"/>
+            <field name="prestacion_id" label="Tipo de Prestación" presentation="SELECT" classparams="{'model':'Reclamos.Prestacion'}"/>
         </fieldset>
         <fieldset title="Poda" columns="2" id="1" >
             <field name="poda_especie" label="Especie" />
             <field name="poda_altura" label="Altura" />
             <field name="poda_dap" label="DAP" />
             <field name="poda_inclinacion" label="Inclinación" />
-            <field name="poda_tipo" label="Tipo de Poda" presentation="SELECTARRAY" classparams="{'options':{'Integral':'Integral','Despeje':'Despeje'}"/>
+            <field name="poda_tipo" label="Tipo de Poda" presentation="SELECTARRAY" classparams="{'options':{'Integral':'Integral','Despeje':'Despeje'}}"/>
         </fieldset>
         <fieldset title="Reparacion de Vereda por Raíces" columns="2" id="2" >
             <field name="reparacion_especie" label="Especie" />
@@ -28,8 +28,8 @@
             <field name="reparacion_dap" label="DAP" />
             <field name="reparacion_inclinacion" label="Inclinación" />
             <field name="reparacion_ancho_vereda" label="Ancho Vereda" presentation="INT" note="En metros."/>
-            <field name="reparacion_estado_plantera" label="Estado de Plantera" presentation="SELECTARRAY" classparams="{'options':{'1':Bueno,'Muy Bueno':'Muy Bueno','Regular':'Regular','Malo':'Malo','Muy Malo':'Muy Malo'}}"/>
-            <field name="reparacion_corte_raices" label="Corte de Raíces" presentation="SELECTARRAY" classparams="{'options':{'Superficial':'Superficial','Profundo':'Profundo'}"/>
+            <field name="reparacion_estado_plantera" label="Estado de Plantera" presentation="SELECTARRAY" classparams="{'options':{'Bueno':'Bueno','Muy Bueno':'Muy Bueno','Regular':'Regular','Malo':'Malo','Muy Malo':'Muy Malo'}}"/>
+            <field name="reparacion_corte_raices" label="Corte de Raíces" presentation="SELECTARRAY" classparams="{'options':{'Superficial':'Superficial','Profundo':'Profundo'}}"/>
         </fieldset>
         <fieldset title="Extracción de Árbol" columns="2" id="3" >
             <field name="extraccion_especie" label="Especie" />
@@ -40,7 +40,7 @@
         </fieldset>
         <fieldset title="Plantación de Árbol" columns="2" id="4" >
             <field name="plantacion_ancho_vereda" label="Ancho de Vereda"  note="En metros."/>
-            <field name="plantacion_estado_plantera" label="Estado de Plantera" presentation="SELECTARRAY" classparams="{'options':{'1':Bueno,'Muy Bueno':'Muy Bueno','Regular':'Regular','Malo':'Malo','Muy Malo':'Muy Malo'}}"/>
+            <field name="plantacion_estado_plantera" label="Estado de Plantera" presentation="SELECTARRAY" classparams="{'options':{'Bueno':'Bueno','Muy Bueno':'Muy Bueno','Regular':'Regular','Malo':'Malo','Muy Malo':'Muy Malo'}}"/>
             <field name="plantacion_especie_sugerida" label="Especie Sugerida"/>
         </fieldset>
      

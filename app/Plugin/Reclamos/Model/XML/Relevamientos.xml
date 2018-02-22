@@ -1,6 +1,6 @@
-<Competencias>
-    <search_list file="CompetenciasSL.php" title="Competencias" >
-        <searchfield name="razon_social" label="Razón Social" presentation="SELECT_FIELD" classparams="{'model':'Reclamos.Empresa','field':'razon_social'}"/>
+<Relevamientos>
+    <search_list file="RelevamientosSL.php" title="Relevamientos" >
+        <searchfield name="razon_social" label="Razón Social" presentation="SELECT" classparams="{'model':'Reclamos.Empresa','field':'razon_social'}"/>
         <searchfield name="cuit" label="CUIT" note="Sólo números" size="20"  breakline="true" />
         <searchfield name="comuna" label="Comuna" presentation="GEOLOCALIZACION::COMUNAS"/>
         <searchfield name="EmpresaPrecio.trabajo_tipo" label="Trabajo Tipo" presentation="RECLAMOS::TRABAJOS_OPERATIVAS" />
@@ -18,16 +18,13 @@
     
     </search_list>
     
-    <tablemaint file="CompetenciasMaint.php">
+    <tablemaint file="RelevamientosMaint.php">
         
-        <fieldset title="Datos de la Empresa" columns="2" >
-            <field name="competencia" label="Competencia" />
+        <fieldset title="Observación" columns="2" >
+            <field name="observacion" label="Observación" />
             
         </fieldset>
-        <table title="Prestaciones" paginate="true" model="Reclamos.Prestacion" >
-            <field name="trabajo_tipo" label="Trabajo Tipo" presentation="RECLAMOS::TRABAJOS_OPERATIVAS"/>
-            <field name="precio" label="Precio"/>
-        </table>        
+       
     </tablemaint>
          
-</Competencias>
+</Relevamientos>

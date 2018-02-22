@@ -7,7 +7,7 @@
     <menuitem label="Reclamos">
         <menuitem label="Prestaciones" controller="prestaciones" action="index" plugin="reclamos" />
         <menuitem label="Reclamos" controller="reclamos" action="index" plugin="reclamos" />
-        <menuitem label="Relevamientos" controller="relevamientos" action="index" plugin="reclamos" />       
+        <menuitem label="Relevamientos General" controller="relevamientos" action="index" plugin="reclamos" />       
         <menuitem label="Relevamientos Arbolados" controller="relevamientos_arbolado" action="index" plugin="reclamos" />       
         <menuitem label="Relevamientos Bacheos" controller="relevamientos_bacheo" action="index" plugin="reclamos" />       
     </menuitem>

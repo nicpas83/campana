@@ -23,7 +23,8 @@ protected $data = array (
                 array (
                     'name' => 'prestacion_id',
                     'label' => 'Tipo de Prestación',
-                    'presentation' => 'PRESTACIONES',
+                    'presentation' => 'SELECT',
+                    'classparams' => '{\'model\':\'Reclamos.Prestacion\'}',
                 ),
             ),
             'id' => 'inicio',
@@ -60,7 +61,7 @@ protected $data = array (
                     'name' => 'poda_tipo',
                     'label' => 'Tipo de Poda',
                     'presentation' => 'SELECTARRAY',
-                    'classparams' => '{\'options\':{\'Integral\':\'Integral\',\'Despeje\':\'Despeje\'}',
+                    'classparams' => '{\'options\':{\'Integral\':\'Integral\',\'Despeje\':\'Despeje\'}}',
                 ),
             ),
             'id' => '1',
@@ -104,14 +105,14 @@ protected $data = array (
                     'name' => 'reparacion_estado_plantera',
                     'label' => 'Estado de Plantera',
                     'presentation' => 'SELECTARRAY',
-                    'classparams' => '{\'options\':{\'1\':Bueno,\'Muy Bueno\':\'Muy Bueno\',\'Regular\':\'Regular\',\'Malo\':\'Malo\',\'Muy Malo\':\'Muy Malo\'}}',
+                    'classparams' => '{\'options\':{\'Bueno\':\'Bueno\',\'Muy Bueno\':\'Muy Bueno\',\'Regular\':\'Regular\',\'Malo\':\'Malo\',\'Muy Malo\':\'Muy Malo\'}}',
                 ),
                 6 => 
                 array (
                     'name' => 'reparacion_corte_raices',
                     'label' => 'Corte de Raíces',
                     'presentation' => 'SELECTARRAY',
-                    'classparams' => '{\'options\':{\'Superficial\':\'Superficial\',\'Profundo\':\'Profundo\'}',
+                    'classparams' => '{\'options\':{\'Superficial\':\'Superficial\',\'Profundo\':\'Profundo\'}}',
                 ),
             ),
             'id' => '2',
@@ -170,7 +171,7 @@ protected $data = array (
                     'name' => 'plantacion_estado_plantera',
                     'label' => 'Estado de Plantera',
                     'presentation' => 'SELECTARRAY',
-                    'classparams' => '{\'options\':{\'1\':Bueno,\'Muy Bueno\':\'Muy Bueno\',\'Regular\':\'Regular\',\'Malo\':\'Malo\',\'Muy Malo\':\'Muy Malo\'}}',
+                    'classparams' => '{\'options\':{\'Bueno\':\'Bueno\',\'Muy Bueno\':\'Muy Bueno\',\'Regular\':\'Regular\',\'Malo\':\'Malo\',\'Muy Malo\':\'Muy Malo\'}}',
                 ),
                 2 => 
                 array (
