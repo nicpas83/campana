@@ -23,8 +23,8 @@ protected $data = array (
                 array (
                     'name' => 'prestacion_id',
                     'label' => 'Tipo de Prestación',
-                    'presentation' => 'AUTOCOMPLETE',
-                    'classparams' => '{\'model\':\'Reclamos.Prestacion\'}',
+                    'presentation' => 'SELECT',
+                    'classparams' => '{\'model\':\'Reclamos.Prestacion\',\'conditions\':{\'Prestacion.competencia\':[\'BACHEO\',\'LUMINARIAS\',\'ESCOMBROS\',\'BALDIOS\',\'ESPACIOS VERDES\',\'POSTES\']}}',
                 ),
             ),
             'id' => 'inicio',
@@ -40,6 +40,7 @@ protected $data = array (
                 array (
                     'name' => 'observaciones',
                     'label' => 'Observación',
+                    'presentation' => 'TEXTAREA',
                 ),
                 1 => 
                 array (

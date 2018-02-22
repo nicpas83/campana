@@ -23,8 +23,8 @@ protected $data = array (
                 array (
                     'name' => 'prestacion_id',
                     'label' => 'Tipo de Prestación',
-                    'presentation' => 'SELECT',
-                    'classparams' => '{\'model\':\'Reclamos.Prestacion\'}',
+                    'presentation' => 'AUTOCOMPLETE',
+                    'classparams' => '{\'model\':\'Reclamos.Prestacion\',\'conditions\':{\'Prestacion.competencia\':\'BACHEO\'}}',
                 ),
             ),
             'id' => 'inicio',

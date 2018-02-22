@@ -20,11 +20,11 @@
     <tablemaint file="RelevamientosMaint.php">
         
         <fieldset title="Relevamientos" columns="2" id="inicio" >
-            <field name="prestacion_id" label="Tipo de Prestación" presentation="AUTOCOMPLETE" classparams="{'model':'Reclamos.Prestacion'}"/>
+            <field name="prestacion_id" label="Tipo de Prestación" presentation="SELECT" classparams="{'model':'Reclamos.Prestacion','conditions':{'Prestacion.competencia':['LUMINARIAS','ESCOMBROS','BALDIOS','ESPACIOS VERDES','POSTES']}}"/>
         </fieldset>
         
         <fieldset title="Observaciones" columns="2" id="inicio" >
-            <field name="observaciones" label="Observación" />
+            <field name="observaciones" label="Observación" presentation="TEXTAREA" />
             <field name="fecha" label="Fecha" presentation="DATE" />
         </fieldset>
         

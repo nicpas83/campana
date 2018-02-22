@@ -13,7 +13,7 @@
     <tablemaint file="RelevamientosBacheoMaint.php">
         
         <fieldset title="Relevamientos Bacheo" columns="2" id="inicio" >
-            <field name="prestacion_id" label="Tipo de Prestación" presentation="SELECT" classparams="{'model':'Reclamos.Prestacion'}"/>
+            <field name="prestacion_id" label="Tipo de Prestación" presentation="AUTOCOMPLETE" classparams="{'model':'Reclamos.Prestacion','conditions':{'Prestacion.competencia':'BACHEO'}}"/>
         </fieldset>
         <fieldset title="Reparación Bache" columns="2" id="5" >
             <field name="reparacion_ancho" label="Ancho" />

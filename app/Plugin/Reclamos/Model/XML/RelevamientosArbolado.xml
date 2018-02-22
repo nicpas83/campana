@@ -12,8 +12,8 @@
     
     <tablemaint file="RelevamientosArboladoMaint.php">
         
-        <fieldset title="RelevamientosArbolado" columns="2" id="inicio" >
-            <field name="prestacion_id" label="Tipo de Prestación" presentation="SELECT" classparams="{'model':'Reclamos.Prestacion'}"/>
+        <fieldset title="Relevamientos Arbolado" columns="2" id="inicio" >
+            <field name="prestacion_id" label="Tipo de Prestación" presentation="AUTOCOMPLETE" classparams="{'model':'Reclamos.Prestacion','conditions':{'Prestacion.competencia':'ARBOLADO'}}"/>
         </fieldset>
         <fieldset title="Poda" columns="2" id="1" >
             <field name="poda_especie" label="Especie" />
