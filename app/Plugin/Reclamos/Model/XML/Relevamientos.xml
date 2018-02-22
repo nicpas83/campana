@@ -3,16 +3,15 @@
         <searchfield name="razon_social" label="Razón Social" presentation="SELECT" classparams="{'model':'Reclamos.Empresa','field':'razon_social'}"/>
         <searchfield name="cuit" label="CUIT" note="Sólo números" size="20"  breakline="true" />
         <searchfield name="comuna" label="Comuna" presentation="GEOLOCALIZACION::COMUNAS"/>
-        <searchfield name="EmpresaPrecio.trabajo_tipo" label="Trabajo Tipo" presentation="RECLAMOS::TRABAJOS_OPERATIVAS" />
         <table>
             <column>
-                <listfield name="razon_social" label="Razón Social" />
+                <listfield name="prestacion_id" label="Prestacion" presentation="AUTOCOMPLETE" classparams="{'model':'Reclamos.Prestacion'}" />
             </column>
             <column>
-                <listfield name="cuit" label="CUIT" />
+                <listfield name="observaciones" label="Observación" />
             </column>
             <column>
-                <listfield name="comuna" label="Comuna" presentation="CHECKBOX" classparams="{'options':{'1':'Comuna 1','2':'Comuna 2','3':'Comuna 3','4':'Comuna 4','5':'Comuna 5','6':'Comuna 6','7':'Comuna 7','8':'Comuna 8','9':'Comuna 9','10':'Comuna 10','11':'Comuna 11','12':'Comuna 12','13':'Comuna 13','14':'Comuna 14','15':'Comuna 15'}}" />
+                <listfield name="fecha"  label="Fecha" presentation="DATE" />
             </column>
         </table>        
     
@@ -20,10 +19,17 @@
     
     <tablemaint file="RelevamientosMaint.php">
         
-        <fieldset title="Observación" columns="2" >
-            <field name="observacion" label="Observación" />
-            
+        <fieldset title="Relevamientos" columns="2" id="inicio" >
+            <field name="prestacion_id" label="Tipo de Prestación" presentation="AUTOCOMPLETE" classparams="{'model':'Reclamos.Prestacion'}"/>
         </fieldset>
+        
+        <fieldset title="Observaciones" columns="2" id="inicio" >
+            <field name="observaciones" label="Observación" />
+            <field name="fecha" label="Fecha" presentation="DATE" />
+        </fieldset>
+        
+        <files title="Archivos" id="archivos"/>       
+
        
     </tablemaint>
          

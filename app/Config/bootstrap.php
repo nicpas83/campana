@@ -55,6 +55,7 @@ Inflector::rules('plural', array('irregular' => array(
 
 Inflector::rules('singular', array('irregular' => array(
         'prestaciones' => 'Prestacion',
+        'relevamientos' => 'Relevamiento',
         'relevamientosarbolado' => 'RelevamientoArbolado',
         'relevamientosbacheo' => 'RelevamientoBacheo',
         

@@ -23,7 +23,8 @@ protected $data = array (
                 array (
                     'name' => 'prestacion_id',
                     'label' => 'Tipo de Prestación',
-                    'presentation' => 'PRESTACIONES',
+                    'presentation' => 'SELECT',
+                    'classparams' => '{\'model\':\'Reclamos.Prestacion\'}',
                 ),
             ),
             'id' => 'inicio',
