@@ -6,8 +6,6 @@ class Relevamiento extends AppModel {
     public $tablePrefix = 'rec_';
     public $useTable = 'relevamientos';
     public $plugin = 'Reclamos';
-    
-
     public $belongsTo = [
         'Reclamo' => [
             'className' => 'Reclamos.Reclamo',

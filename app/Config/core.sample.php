@@ -13,7 +13,6 @@ Configure::write('Error', array(
 Configure::write('Exception', array(
     'handler' => 'ErrorHandler::handleException',
     'renderer' => 'ExceptionRenderer',
-    'log' => true
 ));
 
 Configure::write('App.encoding', 'UTF-8');
