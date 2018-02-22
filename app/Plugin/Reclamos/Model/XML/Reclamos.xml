@@ -34,7 +34,7 @@
         <jsinclude file="reclamos_comunas_maint.js" /> 
         
         <fieldset title="Datos del Reclamo" columns="2" id="reclamo">
-            <field name="prestacion_id" label="Prestación" presentation="SELECT" classparams="{'model':'Reclamos.Prestacion'}" />
+            <field name="prestacion_id" label="Prestación" presentation="AUTOCOMPLETE" classparams="{'model':'Reclamos.Prestacion'}" />
             <field name="fecha" label="Fecha" presentation="DATE"  />
             <field name="vecino" label="Nombre del Vecino"  />
             <field name="vecino_telefono" label="Teléfono del Vecino" presentation="INT" />

@@ -27,7 +27,7 @@ protected $data = array (
                 array (
                     'name' => 'prestacion_id',
                     'label' => 'Prestación',
-                    'presentation' => 'SELECT',
+                    'presentation' => 'AUTOCOMPLETE',
                     'classparams' => '{\'model\':\'Reclamos.Prestacion\'}',
                 ),
                 1 => 
@@ -45,6 +45,7 @@ protected $data = array (
                 array (
                     'name' => 'vecino_telefono',
                     'label' => 'Teléfono del Vecino',
+                    'presentation' => 'INT',
                 ),
                 4 => 
                 array (
