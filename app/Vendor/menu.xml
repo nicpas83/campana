@@ -1,0 +1,103 @@
+﻿<menu>
+    <menuitem label="Inicio">
+        <menuitem label="Inicio" url="" />
+        <menuitem label="Mis Datos" controller="app_users" action="datos_personales" plugin="acceso" />            
+     
+    </menuitem>
+    <menuitem label="Base Adultos">            
+        <menuitem label="Adultos" plugin="base_adultos" controller="adultos" action="index" />
+        <menuitem label="Adultos Pami" plugin="base_adultos" controller="adultos_pami" action="index" />
+        <menuitem label="Adultos Anses" plugin="base_adultos" controller="adultos_anses" action="index" />
+    </menuitem>
+    
+    <menuitem label="+Simple">
+        <menuitem label="Base Inscriptos" plugin="mas_simple" controller="inscriptos" action="index" />
+        <menuitem label="Capacitaciones">
+            <menuitem label="Lista de Espera"  plugin="mas_simple" controller="inscriptos" action="capacitaciones" />
+            <menuitem label="Agendados"  plugin="mas_simple" controller="inscriptos" action="agendados" />
+            <menuitem label="Aulas"  plugin="mas_simple" controller="aulas" action="index" />
+        </menuitem>            
+        <menuitem label="Encuesta Fidelización" plugin="mas_simple" controller="inscriptos" action="callcenter" />
+    </menuitem>
+   
+    <menuitem label="A.G.">            
+        <menuitem label="Adultos" plugin="base_adultos" controller="adultos_agd" action="index" />
+        <menuitem label="Solicitudes" plugin="agd" controller="solicitudes" action="index" />
+        <menuitem label="Liquidación" plugin="agd" controller="liquidaciones" action="index" />
+        <menuitem label="Registro AGD" plugin="agd" controller="asistentes" action="index" />
+        <menuitem label="Patologías" plugin="agd" controller="patologias" action="index" />
+        <menuitem label="Registro AG" plugin="agd" controller="asistentes" action="index_ag" />
+        <menuitem label="Instituciones">    
+            <menuitem label="ABM Instituciones" plugin="agd" controller="instituciones" action="index" />
+            <menuitem label="ABM Cursos" plugin="agd" controller="cursos" action="index" />
+            <!--<menuitem label="ABM Cursadas" plugin="agd" controller="cursadas" action="index" />-->
+        </menuitem>
+        <menuitem label="Dashboard" plugin="" controller="pages" action="agd" />
+    </menuitem>
+    <menuitem label="Vivir En Casa">            
+        <menuitem label="Adultos" plugin="base_adultos" controller="adultos_vc" action="index" />
+        <menuitem label="Solicitudes" controller="solicitudes_vc" action="index" plugin="vivir_en_casa" />
+    </menuitem>
+    <menuitem label="Proteger">            
+        <menuitem label="Casos" plugin="proteger" controller="casos" action="index" />
+        <menuitem label="ABM Equipos" plugin="proteger" controller="equipos" action="index" />
+        <menuitem label="ABM Fiscalías" plugin="proteger" controller="fiscalias" action="index" />
+        <menuitem label="ABM Juzgados" plugin="proteger" controller="juzgados" action="index" />
+        <menuitem label="Seguimiento de Casos" plugin="proteger" controller="auditorias" action="index" />
+    </menuitem>
+    <menuitem label="CEPPAM">
+        <menuitem label="Geriátricos" plugin="ceppam" controller="geriatricos" action="index" />
+        <menuitem label="Inspecciones" plugin="ceppam" controller="inspecciones" action="index" />
+        <menuitem label="Clausuras" plugin="ceppam" controller="clausuras" action="index" />
+        <menuitem label="Verficadores" plugin="ceppam" controller="verificadores" action="index" />
+    </menuitem>
+    <menuitem label="CdJ">            
+        <menuitem label="Registro CDJ" plugin="cdj" controller="centros_jubilados" action="index" />
+        <menuitem label="Visitas Sociales" plugin="cdj" controller="visitas_sociales" action="index" />
+
+        <menuitem label="Actividades">
+            <menuitem label="Cursos y Capacitaciones" plugin="cdj" controller="cursos_capacitaciones" action="index" />
+            <menuitem label="Talleres" plugin="cdj" controller="talleres" action="index" />
+            <menuitem label="Profesores (Taller)" plugin="cdj" controller="profesores" action="index" />
+        </menuitem>
+        
+    </menuitem>
+   
+    <menuitem label="Administración">
+        <menuitem label="Secretaría">            
+            <menuitem label="Agentes" plugin="secretaria" controller="agentes" action="index" />
+            <menuitem label="Agentes Vacaciones" plugin="secretaria" controller="vacaciones" action="index" />
+            <menuitem label="Ausentismos">
+                <menuitem label="Reporte" plugin="secretaria" controller="agentes_ausentismos" action="index" />
+                <menuitem label="Administrar" plugin="secretaria" controller="ausentismos" action="index" />
+            </menuitem>
+        </menuitem>
+        <menuitem label="Acceso">
+            <menuitem label="Usuarios" controller="users" action="index" plugin="fmw_acceso" />
+            <menuitem label="Roles" controller="rols" action="index" plugin="fmw_acceso" />
+            <menuitem label="Derechos" controller="rights" action="index" plugin="fmw_acceso" />
+            <menuitem label="Permisos" controller="permisos" action="index" plugin="fmw_acceso" />
+            <menuitem label="Botones" controller="buttons" action="index" plugin="fmw_acceso" />
+        </menuitem>
+        <menuitem label="Dashboard">
+            <menuitem label="Consultar Gráficos" plugin="fmw_dashboard" controller="charts" action="index" />
+            <menuitem label="Consultar Gauges" plugin="fmw_dashboard" controller="gauges" action="index" />
+            <menuitem label="Consultar KPIs" plugin="fmw_dashboard" controller="kpis" action="index" />
+        </menuitem>
+        <menuitem label="Sistema">
+            <menuitem label="Configuración" controller="configurations" action="edit/1" plugin="fmw_system" />
+            <menuitem label="Consultar Crons" controller="crons" action="index" plugin="fmw_system" />
+            <menuitem label="Consultar Logs" controller="logs" action="index" plugin="fmw_system" />
+            <menuitem label="Consultar Estados" controller="estados" action="index" plugin="fmw_system" />
+            <menuitem label="Consultar Bloqueos" controller="bloqueos" action="index" plugin="fmw_system" />
+        </menuitem>
+        <menuitem label="Mensajería">
+            <menuitem label="Mensajes Notificaciones" controller="notification_messages" action="index" plugin="fmw_messaging" />
+            <menuitem label="Servidores" controller="servers" action="index" plugin="fmw_messaging" />
+            <menuitem label="Templates" controller="templates" action="index" plugin="fmw_messaging" />
+            <menuitem label="Consultar Emails Entrantes" controller="entrantes" action="index" plugin="fmw_messaging" />
+            <menuitem label="Consultar Emails Salientes" controller="mensajes" action="emails" plugin="fmw_messaging" />
+            <menuitem label="Consultar SMS" controller="mensajes" action="sms" plugin="fmw_messaging" />
+        </menuitem>
+    </menuitem>
+</menu>
