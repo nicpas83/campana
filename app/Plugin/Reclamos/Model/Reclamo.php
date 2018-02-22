@@ -8,10 +8,10 @@ class Reclamo extends AppModel {
     public $plugin = 'Reclamos';
     
 
-    public $hasMany = [
-        'Relevamiento' => [
-            'className' => 'Reclamos.Relevamiento',
-            'foreignKey' => 'reclamo_id',
+    public $belongsTo = [
+        'Prestacion' => [
+            'className' => 'Reclamos.Prestacion',
+            'foreignKey' => 'prestacion_id',
         ],
     ];
     

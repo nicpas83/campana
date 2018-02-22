@@ -1,33 +1,57 @@
-<Competencias>
-    <search_list file="CompetenciasSL.php" title="Competencias" >
-        <searchfield name="razon_social" label="Razón Social" presentation="SELECT_FIELD" classparams="{'model':'Reclamos.Empresa','field':'razon_social'}"/>
-        <searchfield name="cuit" label="CUIT" note="Sólo números" size="20"  breakline="true" />
-        <searchfield name="comuna" label="Comuna" presentation="GEOLOCALIZACION::COMUNAS"/>
-        <searchfield name="EmpresaPrecio.trabajo_tipo" label="Trabajo Tipo" presentation="RECLAMOS::TRABAJOS_OPERATIVAS" />
+<Reclamos>
+    <search_list file="ReclamosSL.php" orderby="fecha_carga DESC">
+        <searchfield name="prestacion" label="Prestación" presentation="AUTOCOMPLETE" classparams="{'model':'Reclamos.Prestacion'}" />
+        <searchfield name="fecha_carga" label="Fecha" presentation="DATERANGE" />
+        <searchfield name="vecino" label="Vecino" />
+        
         <table>
             <column>
-                <listfield name="razon_social" label="Razón Social" />
+                <listfield name="Prestacion.competencia" label="Competencia"  />
             </column>
             <column>
-                <listfield name="cuit" label="CUIT" />
+                <listfield name="Prestacion.prestacion" label="Prestacion"  />
             </column>
             <column>
-                <listfield name="comuna" label="Comuna" presentation="CHECKBOX" classparams="{'options':{'1':'Comuna 1','2':'Comuna 2','3':'Comuna 3','4':'Comuna 4','5':'Comuna 5','6':'Comuna 6','7':'Comuna 7','8':'Comuna 8','9':'Comuna 9','10':'Comuna 10','11':'Comuna 11','12':'Comuna 12','13':'Comuna 13','14':'Comuna 14','15':'Comuna 15'}}" />
+                <listfield name="fecha" label="Fecha" presentation="DATE"  />
             </column>
-        </table>        
-    
+            <column>
+                <listfield name="direccion" label="Dirección"  />
+            </column>
+            <column>
+                <listfield name="comentario" label="Comentario" />
+            </column>
+            <column>
+                <listfield name="vecino" label="Vecino" />
+            </column>
+            <column>
+                <listfield name="estado" label="Estado"  />
+            </column>
+            
+        </table>
     </search_list>
     
-    <tablemaint file="CompetenciasMaint.php">
+    <tablemaint file="ReclamosMaint.php">
+        <jsinclude file="reclamos_comunas_maint.js" /> 
         
-        <fieldset title="Datos de la Empresa" columns="2" >
-            <field name="competencia" label="Competencia" />
+        <fieldset title="Datos del Reclamo" columns="2" id="reclamo">
+            <field name="prestacion_id" label="Prestación" presentation="SELECT" classparams="{'model':'Reclamos.Prestacion'}" />
+            <field name="fecha" label="Fecha" presentation="DATE"  />
+            <field name="vecino" label="Nombre del Vecino"  />
+            <field name="vecino_telefono" label="Teléfono del Vecino" presentation="INT" />
+            <field name="comentario" label="Reclamo" presentation="TEXTAREA" />
+            <field name="estado" label="Estado" presentation="ESTADOS_RECLAMOS" />
             
         </fieldset>
-        <table title="Prestaciones" paginate="true" model="Reclamos.Prestacion" >
-            <field name="trabajo_tipo" label="Trabajo Tipo" presentation="RECLAMOS::TRABAJOS_OPERATIVAS"/>
-            <field name="precio" label="Precio"/>
-        </table>        
+        <fieldset title="Ubicación del Reclamo" id="ubicacion">
+            <field name="direccion" label="Dirección" />
+            <field name="tmp_provincia" label="Provincia" initialvalue="Campana, Provincia de Buenos Aires" isvisible="false" />
+            <field name="tmp_pais" label="País" initialvalue="Argentina" isvisible="false" />
+        </fieldset>        
+        <fieldset title="Mapa" id="mapa">
+            <field name="coordenadas" label="" presentation="GOOGLEMAP" classparams="{'calle_altura':'direccion', 'provincia':'tmp_provincia', 'pais':'tmp_pais'}" />
+        </fieldset>
+
+        <files title="Archivos Adjuntos" />
     </tablemaint>
          
-</Competencias>
+</Reclamos>

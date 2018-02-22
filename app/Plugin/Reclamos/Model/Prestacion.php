@@ -7,7 +7,12 @@ class Prestacion extends AppModel {
     public $useTable = 'prestaciones';
     public $plugin = 'Reclamos';
     
-    public $displayField = "CONCAT(competencia, ' - ', prestacion)";
+    public $virtualFields = array(
+        'tmp_prestacion' => "CONCAT(competencia, ' - ', prestacion)",
+    );
+    
+    public $displayField = "tmp_prestacion";
+    
 
     public $hasMany = [
         'Reclamo' => [
