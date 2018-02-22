@@ -1,0 +1,33 @@
+<RelevamientosBacheo>
+    <search_list file="RelevamientosBacheoSL.php" title="Relevamientos Arbolado" >
+        <searchfield name="prestacion_id"  label="Tipo de Prestación" presentation="PRESTACIONES" />
+        <table>
+            <column>
+                <listfield name="prestacion_id"  label="Tipo de Prestación" presentation="PRESTACIONES" />
+            </column>
+           
+        </table>        
+    
+    </search_list>
+    
+    <tablemaint file="RelevamientosBacheoMaint.php">
+        
+        <fieldset title="Relevamientos Bacheo" columns="2" id="inicio" >
+            <field name="prestacion_id" label="Tipo de Prestación" presentation="PRESTACIONES"/>
+        </fieldset>
+        <fieldset title="Reparación Bache" columns="2" id="5" >
+            <field name="reparacion_ancho" label="Ancho" />
+            <field name="reparacion_largo" label="Largo" />
+            <field name="reparacion_profundidad" label="Profundidad" />
+        </fieldset>
+        <fieldset title="Problemas" columns="2" id="6" >
+            <field name="problemas_ancho" label="Ancho" />
+            <field name="problemas_largo" label="Largo" />
+            <field name="problemas_profundidad" label="Profundidad" />
+            <field name="problemas_empresa" label="Empresa" />
+        </fieldset>
+        
+     
+    </tablemaint>
+         
+</RelevamientosBacheo>

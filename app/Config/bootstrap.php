@@ -49,12 +49,14 @@ Inflector::rules('plural', array('irregular' => array(
         'prestacion' => 'Prestaciones',
         'relevamiento' => 'Relevamientos',
         'relevamientoarbolado' => 'RelevamientosArbolado',
+        'relevamientobacheo' => 'RelevamientosBacheo',
         
 )));
 
 Inflector::rules('singular', array('irregular' => array(
         'prestaciones' => 'Prestacion',
         'relevamientosarbolado' => 'RelevamientoArbolado',
+        'relevamientosbacheo' => 'RelevamientoBacheo',
         
 )));
 

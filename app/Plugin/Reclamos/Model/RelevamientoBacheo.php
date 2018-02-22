@@ -1,10 +1,10 @@
 <?php
 
-class Relevamiento extends AppModel {
+class RelevamientoBacheo extends AppModel {
 
     public $label = 'Relevamientos';
     public $tablePrefix = 'rec_';
-    public $useTable = 'relevamientos';
+    public $useTable = 'relevamientos_bacheo';
     public $plugin = 'Reclamos';
     public $belongsTo = [
         'Reclamo' => [
