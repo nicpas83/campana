@@ -3,6 +3,15 @@
         <menuitem label="Inicio" url="" />
         <menuitem label="Mis Datos" controller="app_users" action="datos_personales" plugin="acceso" />            
     </menuitem>
+    
+    <menuitem label="Reclamos">
+        <menuitem label="Prestaciones" controller="prestaciones" action="index" plugin="reclamos" />
+        <menuitem label="Reclamos" controller="reclamos" action="index" plugin="reclamos" />
+        <menuitem label="Relevamientos" controller="relevamientos" action="index" plugin="reclamos" />       
+    </menuitem>
+    
+    
+
     <menuitem label="Administración">
         <menuitem label="Acceso">
             <menuitem label="Usuarios" controller="users" action="index" plugin="fmw_acceso" />

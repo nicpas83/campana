@@ -1,33 +1,27 @@
 <Prestaciones>
     <search_list file="PrestacionesSL.php" title="Prestaciones" >
-        <searchfield name="razon_social" label="Razón Social" presentation="SELECT_FIELD" classparams="{'model':'Reclamos.Empresa','field':'razon_social'}"/>
-        <searchfield name="cuit" label="CUIT" note="Sólo números" size="20"  breakline="true" />
-        <searchfield name="comuna" label="Comuna" presentation="GEOLOCALIZACION::COMUNAS"/>
-        <searchfield name="EmpresaPrecio.trabajo_tipo" label="Trabajo Tipo" presentation="RECLAMOS::TRABAJOS_OPERATIVAS" />
+        <searchfield name="competencia" label="Competencia" presentation="SELECT_FIELD" classparams="{'model':'Reclamos.Prestacion','field':'competencia'}"/>
+        
         <table>
             <column>
-                <listfield name="prestacion" label="Razón Social" />
+                <listfield name="prestacion" label="Prestacion" />
             </column>
             <column>
-                <listfield name="cuit" label="CUIT" />
+                <listfield name="competencia" label="Competencia" />
             </column>
-            <column>
-                <listfield name="comuna" label="Comuna" presentation="CHECKBOX" classparams="{'options':{'1':'Comuna 1','2':'Comuna 2','3':'Comuna 3','4':'Comuna 4','5':'Comuna 5','6':'Comuna 6','7':'Comuna 7','8':'Comuna 8','9':'Comuna 9','10':'Comuna 10','11':'Comuna 11','12':'Comuna 12','13':'Comuna 13','14':'Comuna 14','15':'Comuna 15'}}" />
-            </column>
+            
         </table>        
     
     </search_list>
     
     <tablemaint file="PrestacionesMaint.php">
         
-        <fieldset title="Datos de la Empresa" columns="2" >
-            <field name="competencia" label="Competencia" />
+        <fieldset title="Definir la Prestacion y su Competencia" columns="2" >
+            <field name="prestacion" label="Prestación" />
+            <field name="competencia" label="Competencia" presentation="COMPETENCIA" />
             
         </fieldset>
-        <table title="Prestaciones" paginate="true" model="Reclamos.Prestacion" >
-            <field name="trabajo_tipo" label="Trabajo Tipo" presentation="RECLAMOS::TRABAJOS_OPERATIVAS"/>
-            <field name="precio" label="Precio"/>
-        </table>        
+            
     </tablemaint>
          
 </Prestaciones>

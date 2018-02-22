@@ -1,17 +1,17 @@
 <?php
 
-class Competencia extends AppModel {
+class Relevamiento extends AppModel {
 
-    public $label = 'Competencias';
+    public $label = 'Relevamientos';
     public $tablePrefix = 'rec_';
-    public $useTable = 'competencias';
+    public $useTable = 'relevamientos';
     public $plugin = 'Reclamos';
     
 
-    public $hasMany = [
-        'Prestacion' => [
-            'className' => 'Reclamos.Prestacion',
-            'foreignKey' => 'competenci_id',
+    public $belongsTo = [
+        'Reclamo' => [
+            'className' => 'Reclamos.Reclamo',
+            'foreignKey' => 'reclamo_id',
         ],
     ];
     

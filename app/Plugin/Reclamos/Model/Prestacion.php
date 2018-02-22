@@ -7,6 +7,7 @@ class Prestacion extends AppModel {
     public $useTable = 'prestaciones';
     public $plugin = 'Reclamos';
     
+    public $displayField = "CONCAT(competencia, ' - ', prestacion)";
 
     public $hasMany = [
         'Reclamo' => [
