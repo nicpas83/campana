@@ -13,23 +13,16 @@ protected $data = array (
     array (
         0 => 
         array (
-            'name' => 'razon_social',
-            'label' => 'Razón Social',
+            'name' => 'prestacion_id',
+            'label' => 'Tipo de Prestación',
             'presentation' => 'SELECT',
-            'classparams' => '{\'model\':\'Reclamos.Empresa\',\'field\':\'razon_social\'}',
+            'classparams' => '{\'model\':\'Reclamos.Prestacion\',\'conditions\':{\'Prestacion.competencia\':[\'LUMINARIAS\',\'ESCOMBROS\',\'BALDIOS\',\'ESPACIOS VERDES\',\'POSTES\']}}',
         ),
         1 => 
         array (
-            'name' => 'cuit',
-            'label' => 'CUIT',
-            'size' => 20,
-            'note' => 'Sólo números',
-        ),
-        2 => 
-        array (
-            'name' => 'comuna',
-            'label' => 'Comuna',
-            'presentation' => 'GEOLOCALIZACION::COMUNAS',
+            'name' => 'estado',
+            'label' => 'Estado',
+            'presentation' => 'ESTADOS_RECLAMOS',
         ),
     ),
     'columns' => 
@@ -43,8 +36,8 @@ protected $data = array (
                 0 => 
                 array (
                     'name' => 'prestacion_id',
-                    'label' => 'Prestacion',
-                    'presentation' => 'AUTOCOMPLETE',
+                    'label' => 'Tipo de Prestación',
+                    'presentation' => 'SELECT',
                     'classparams' => '{\'model\':\'Reclamos.Prestacion\'}',
                 ),
             ),
@@ -57,8 +50,8 @@ protected $data = array (
             array (
                 0 => 
                 array (
-                    'name' => 'observaciones',
-                    'label' => 'Observación',
+                    'name' => 'vecino',
+                    'label' => 'Vecino',
                 ),
             ),
         ),
@@ -70,8 +63,49 @@ protected $data = array (
             array (
                 0 => 
                 array (
+                    'name' => 'vecino_telefono',
+                    'label' => 'Teléfono',
+                    'presentation' => 'INT',
+                ),
+            ),
+        ),
+        3 => 
+        array (
+            'label' => '',
+            'sortfield' => '',
+            'fields' => 
+            array (
+                0 => 
+                array (
+                    'name' => 'direccion',
+                    'label' => 'Dirección',
+                ),
+            ),
+        ),
+        4 => 
+        array (
+            'label' => '',
+            'sortfield' => '',
+            'fields' => 
+            array (
+                0 => 
+                array (
+                    'name' => 'estado',
+                    'label' => 'Estado',
+                    'presentation' => 'ESTADOS_RECLAMOS',
+                ),
+            ),
+        ),
+        5 => 
+        array (
+            'label' => '',
+            'sortfield' => '',
+            'fields' => 
+            array (
+                0 => 
+                array (
                     'name' => 'fecha',
-                    'label' => 'Fecha',
+                    'label' => 'Fecha de Relevamiento',
                     'presentation' => 'DATE',
                 ),
             ),

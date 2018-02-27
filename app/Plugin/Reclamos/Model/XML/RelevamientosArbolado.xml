@@ -1,19 +1,46 @@
 <RelevamientosArbolado>
-    <search_list file="RelevamientosArboladoSL.php" title="Relevamientos Arbolado" >
-        <searchfield name="prestacion_id"  label="Tipo de Prestación" presentation="PRESTACIONES" />
+     <search_list file="RelevamientosArboladoSL.php" title="Relevamientos Arbolado" >
+        <searchfield name="prestacion_id" label="Tipo de Prestación" presentation="SELECT" classparams="{'model':'Reclamos.Prestacion','conditions':{'Prestacion.competencia':['ARBOLADO']}}"/>
+        <searchfield name="estado"  label="Estado" presentation="ESTADOS_RECLAMOS" />
+        <searchfield name="fecha"  label="Fecha" presentation="DATE"  />
         <table>
             <column>
-                <listfield name="prestacion_id"  label="Tipo de Prestación" presentation="PRESTACIONES" />
+                <listfield name="prestacion_id"  label="Tipo de Prestación" presentation="SELECT" classparams="{'model':'Reclamos.Prestacion'}" />
             </column>
-           
-        </table>        
-    
+            <column>
+                <listfield name="vecino"  label="Vecino"  />
+            </column>
+            <column>
+                <listfield name="vecino_telefono"  label="Teléfono" presentation="INT" />
+            </column>
+            <column>
+                <listfield name="direccion"  label="Dirección" />
+            </column>
+            <column>
+                <listfield name="estado"  label="Estado" presentation="ESTADOS_RECLAMOS" />
+            </column>
+            <column>
+                <listfield name="fecha"  label="Fecha de Relevamiento" presentation="DATE" />
+            </column>
+        </table>     
     </search_list>
     
     <tablemaint file="RelevamientosArboladoMaint.php">
-        
-        <fieldset title="Relevamientos Arbolado" columns="2" id="inicio" >
-            <field name="prestacion_id" label="Tipo de Prestación" presentation="AUTOCOMPLETE" classparams="{'model':'Reclamos.Prestacion','conditions':{'Prestacion.competencia':'ARBOLADO'}}"/>
+        <jsinclude file="reclamos/relevamientos_maint.js" />
+        <fieldset title="Datos del Reclamo" columns="2" id="reclamo">
+            <field name="fecha" label="Fecha" presentation="DATE" />
+            <field name="vecino" label="Nombre del Vecino"  />
+            <field name="vecino_telefono" label="Teléfono del Vecino" presentation="INT" />
+            <field name="estado" label="Estado" presentation="ESTADOS_RECLAMOS" />
+            <field name="prestacion_id" label="Tipo de Prestación" presentation="SELECT" classparams="{'model':'Reclamos.Prestacion','conditions':{'Prestacion.competencia':'ARBOLADO'}}"/>
+        </fieldset>
+        <fieldset title="Ubicación del Reclamo" id="ubicacion">
+            <field name="direccion" label="Dirección" />
+            <field name="tmp_provincia" label="Provincia" initialvalue="Campana, Provincia de Buenos Aires" isvisible="false"  />
+            <field name="tmp_pais" label="País" initialvalue="Argentina" isvisible="false"  />
+        </fieldset>        
+        <fieldset title="Mapa" id="mapa">
+            <field name="coordenadas" label="" presentation="GOOGLEMAP" classparams="{'calle_altura':'direccion', 'provincia':'tmp_provincia', 'pais':'tmp_pais'}" />
         </fieldset>
         <fieldset title="Poda" columns="2" id="1" >
             <field name="poda_especie" label="Especie" />
@@ -43,7 +70,9 @@
             <field name="plantacion_estado_plantera" label="Estado de Plantera" presentation="SELECTARRAY" classparams="{'options':{'Bueno':'Bueno','Muy Bueno':'Muy Bueno','Regular':'Regular','Malo':'Malo','Muy Malo':'Muy Malo'}}"/>
             <field name="plantacion_especie_sugerida" label="Especie Sugerida"/>
         </fieldset>
-     
+        
+        <files title="Archivos" id="archivos"/>       
+
     </tablemaint>
          
 </RelevamientosArbolado>

@@ -1,31 +1,48 @@
 <Relevamientos>
     <search_list file="RelevamientosSL.php" title="Relevamientos" >
-        <searchfield name="razon_social" label="Razón Social" presentation="SELECT" classparams="{'model':'Reclamos.Empresa','field':'razon_social'}"/>
-        <searchfield name="cuit" label="CUIT" note="Sólo números" size="20"  breakline="true" />
-        <searchfield name="comuna" label="Comuna" presentation="GEOLOCALIZACION::COMUNAS"/>
+        <searchfield name="prestacion_id" label="Tipo de Prestación" presentation="SELECT" classparams="{'model':'Reclamos.Prestacion','conditions':{'Prestacion.competencia':['LUMINARIAS','ESCOMBROS','BALDIOS','ESPACIOS VERDES','POSTES']}}"/>
+        <searchfield name="estado"  label="Estado" presentation="ESTADOS_RECLAMOS" />
         <table>
             <column>
-                <listfield name="prestacion_id" label="Prestacion" presentation="AUTOCOMPLETE" classparams="{'model':'Reclamos.Prestacion'}" />
+                <listfield name="prestacion_id"  label="Tipo de Prestación" presentation="SELECT" classparams="{'model':'Reclamos.Prestacion'}" />
             </column>
             <column>
-                <listfield name="observaciones" label="Observación" />
+                <listfield name="vecino"  label="Vecino"  />
             </column>
             <column>
-                <listfield name="fecha"  label="Fecha" presentation="DATE" />
+                <listfield name="vecino_telefono"  label="Teléfono" presentation="INT" />
             </column>
-        </table>        
+            <column>
+                <listfield name="direccion"  label="Dirección" />
+            </column>
+            <column>
+                <listfield name="estado"  label="Estado" presentation="ESTADOS_RECLAMOS" />
+            </column>
+            <column>
+                <listfield name="fecha"  label="Fecha de Relevamiento" presentation="DATE" />
+            </column>
+        </table>         
     
     </search_list>
     
     <tablemaint file="RelevamientosMaint.php">
-        
-        <fieldset title="Relevamientos" columns="2" id="inicio" >
+        <fieldset title="Datos del Reclamo" columns="2" id="reclamo">
+            <field name="fecha" label="Fecha" presentation="DATE" />
+            <field name="vecino" label="Nombre del Vecino"  />
+            <field name="vecino_telefono" label="Teléfono del Vecino" presentation="INT" />
+            <field name="estado" label="Estado" presentation="ESTADOS_RECLAMOS" />
             <field name="prestacion_id" label="Tipo de Prestación" presentation="SELECT" classparams="{'model':'Reclamos.Prestacion','conditions':{'Prestacion.competencia':['LUMINARIAS','ESCOMBROS','BALDIOS','ESPACIOS VERDES','POSTES']}}"/>
         </fieldset>
-        
+        <fieldset title="Ubicación del Reclamo" id="ubicacion">
+            <field name="direccion" label="Dirección" />
+            <field name="tmp_provincia" label="Provincia" initialvalue="Campana, Provincia de Buenos Aires" isvisible="false"  />
+            <field name="tmp_pais" label="País" initialvalue="Argentina" isvisible="false"  />
+        </fieldset>        
+        <fieldset title="Mapa" id="mapa">
+            <field name="coordenadas" label="" presentation="GOOGLEMAP" classparams="{'calle_altura':'direccion', 'provincia':'tmp_provincia', 'pais':'tmp_pais'}" />
+        </fieldset>
         <fieldset title="Observaciones" columns="2" id="inicio" >
             <field name="observaciones" label="Observación" presentation="TEXTAREA" />
-            <field name="fecha" label="Fecha" presentation="DATE" />
         </fieldset>
         
         <files title="Archivos" id="archivos"/>       

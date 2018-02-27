@@ -4,18 +4,25 @@
 
 App::uses('AbstractData', 'Lib');
 
-class RelevamientosBacheoSL extends AbstractData {
+class RelevamientosSL extends AbstractData {
 
 protected $data = array (
     'translatepath' => NULL,
-    'title' => 'Relevamientos Bacheo',
+    'title' => 'Relevamientos',
     'filters' => 
     array (
         0 => 
         array (
             'name' => 'prestacion_id',
             'label' => 'Tipo de Prestación',
-            'presentation' => 'PRESTACIONES',
+            'presentation' => 'SELECT',
+            'classparams' => '{\'model\':\'Reclamos.Prestacion\',\'conditions\':{\'Prestacion.competencia\':[\'ARBOLADO\']}}',
+        ),
+        1 => 
+        array (
+            'name' => 'estado',
+            'label' => 'Estado',
+            'presentation' => 'ESTADOS_RECLAMOS',
         ),
     ),
     'columns' => 

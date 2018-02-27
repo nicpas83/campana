@@ -13,5 +13,13 @@ class RelevamientoArbolado extends AppModel {
         ],
     ];
     
+    public $hasMany = [
+        'File' => array(
+            'className' => 'FmwSystem.File',
+            'conditions' => array('File.model' => 'Reclamos.Relevamiento'),
+            'foreignKey' => 'model_id',
+            'dependent' => true,
+        ),
+    ];
 
 }

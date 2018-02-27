@@ -32,8 +32,18 @@ function dashboardDinero($dinero, $showSigno = true) {
     return ($showSigno ? "$ " : "") . $result;
 }
 
-//function sinLiquidar($row) {
-//      debug($row['Liquidacion']);die;
-////    return $row['Liquidacion']['estado'] == null;
-//  
-//}
+function esArbolado($row) {
+    return $row['Reclamo']['prestacion_id'] ==  1 ||
+            $row['Reclamo']['prestacion_id'] == 2 ||
+            $row['Reclamo']['prestacion_id'] == 3 ||
+            $row['Reclamo']['prestacion_id'] == 4;
+}
+
+function esBacheo($row) {
+    return $row['Reclamo']['prestacion_id'] == 5 ||
+            $row['Reclamo']['prestacion_id'] == 6;
+}
+
+function esOtro($row) {
+    return $row['Reclamo']['prestacion_id'] >= 7;
+}
