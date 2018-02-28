@@ -49,7 +49,7 @@ protected $data = array (
                     'name' => 'prestacion_id',
                     'label' => 'Tipo de Prestación',
                     'presentation' => 'SELECT',
-                    'classparams' => '{\'model\':\'Reclamos.Prestacion\',\'conditions\':{\'Prestacion.competencia\':\'ARBOLADO\'}}',
+                    'classparams' => '{\'model\':\'Reclamos.Prestacion\',\'conditions\':{\'Prestacion.competencia\':[\'LUMINARIAS\',\'ESCOMBROS\',\'BALDIOS\',\'ESPACIOS VERDES\',\'POSTES\']}}',
                 ),
             ),
             'id' => 'reclamo',
