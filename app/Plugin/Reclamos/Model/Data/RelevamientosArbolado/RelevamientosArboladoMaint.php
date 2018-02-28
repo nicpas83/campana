@@ -118,6 +118,8 @@ protected $data = array (
                 array (
                     'name' => 'poda_altura',
                     'label' => 'Altura',
+                    'presentation' => 'FLOAT',
+                    'note' => 'En metros.',
                 ),
                 2 => 
                 array (
@@ -150,11 +152,15 @@ protected $data = array (
                 array (
                     'name' => 'reparacion_especie',
                     'label' => 'Especie',
+                    'presentation' => 'FLOAT',
+                    'note' => 'En metros.',
                 ),
                 1 => 
                 array (
                     'name' => 'reparacion_altura',
                     'label' => 'Altura',
+                    'presentation' => 'FLOAT',
+                    'note' => 'En metros.',
                 ),
                 2 => 
                 array (
@@ -170,7 +176,7 @@ protected $data = array (
                 array (
                     'name' => 'reparacion_ancho_vereda',
                     'label' => 'Ancho Vereda',
-                    'presentation' => 'INT',
+                    'presentation' => 'FLOAT',
                     'note' => 'En metros.',
                 ),
                 5 => 
@@ -206,6 +212,8 @@ protected $data = array (
                 array (
                     'name' => 'extraccion_altura',
                     'label' => 'Altura',
+                    'presentation' => 'FLOAT',
+                    'note' => 'En metros.',
                 ),
                 2 => 
                 array (
@@ -237,6 +245,7 @@ protected $data = array (
                 array (
                     'name' => 'plantacion_ancho_vereda',
                     'label' => 'Ancho de Vereda',
+                    'presentation' => 'FLOAT',
                     'note' => 'En metros.',
                 ),
                 1 => 

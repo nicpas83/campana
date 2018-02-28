@@ -24,3 +24,6 @@
 /app/Config/database.php
 /vendors/*
 nbproject/
+*.docx
+app/webroot/files/8d/16/01/62/49/8d1601624967b349b5bc4e7f9893f3f5.sql
+app/webroot/files/b9/18/e6/75/e6/b918e675e69fc257434aeccd7ef674aa.sql
