@@ -9,13 +9,11 @@
         <menuitem label="Reclamos" controller="reclamos" action="index" plugin="reclamos" />
         <menuitem label="Relevamientos">
             <menuitem label="Relevamientos General" controller="relevamientos" action="index" plugin="reclamos" />       
-            <menuitem label="Relevamientos Arbolados" controller="relevamientos_arbolado" action="index" plugin="reclamos" />       
-            <menuitem label="Relevamientos Bacheos" controller="relevamientos_bacheo" action="index" plugin="reclamos" />       
+            <menuitem label="Relevamientos Arbolado" controller="relevamientos_arbolado" action="index" plugin="reclamos" />       
+            <menuitem label="Relevamientos Bacheo" controller="relevamientos_bacheo" action="index" plugin="reclamos" />       
         </menuitem>
     </menuitem>
     
-    
-
     <menuitem label="Administración">
         <menuitem label="Acceso">
             <menuitem label="Usuarios" controller="users" action="index" plugin="fmw_acceso" />

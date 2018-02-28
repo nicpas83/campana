@@ -12,7 +12,6 @@ class RelevamientoArbolado extends AppModel {
             'foreignKey' => 'reclamo_id',
         ],
     ];
-    
     public $hasMany = [
         'File' => array(
             'className' => 'FmwSystem.File',
@@ -21,5 +20,25 @@ class RelevamientoArbolado extends AppModel {
             'dependent' => true,
         ),
     ];
+    public $validate = array(
+        'prestacion_id' => array(
+            'required' => array(
+                'rule' => array('notBlank'),
+                'message' => 'El campo Tipo de Prestación es requerido'
+            )
+        ),
+        'fecha' => array(
+            'required' => array(
+                'rule' => array('notBlank'),
+                'message' => 'El campo Fecha es requerido'
+            )
+        ),
+        'estado' => array(
+            'required' => array(
+                'rule' => array('notBlank'),
+                'message' => 'El campo Estado es requerido'
+            )
+        ),
+    );
 
 }

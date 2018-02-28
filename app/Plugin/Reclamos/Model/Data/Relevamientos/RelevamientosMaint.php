@@ -24,6 +24,7 @@ protected $data = array (
                     'name' => 'fecha',
                     'label' => 'Fecha',
                     'presentation' => 'DATE',
+                    'classparams' => '{\'force\':true}',
                 ),
                 1 => 
                 array (
@@ -41,13 +42,14 @@ protected $data = array (
                     'name' => 'estado',
                     'label' => 'Estado',
                     'presentation' => 'ESTADOS_RECLAMOS',
+                    'initialvalue' => 'Iniciado',
                 ),
                 4 => 
                 array (
                     'name' => 'prestacion_id',
                     'label' => 'Tipo de Prestación',
                     'presentation' => 'SELECT',
-                    'classparams' => '{\'model\':\'Reclamos.Prestacion\',\'conditions\':{\'Prestacion.competencia\':[\'LUMINARIAS\',\'ESCOMBROS\',\'BALDIOS\',\'ESPACIOS VERDES\',\'POSTES\']}}',
+                    'classparams' => '{\'model\':\'Reclamos.Prestacion\',\'conditions\':{\'Prestacion.competencia\':\'ARBOLADO\'}}',
                 ),
             ),
             'id' => 'reclamo',

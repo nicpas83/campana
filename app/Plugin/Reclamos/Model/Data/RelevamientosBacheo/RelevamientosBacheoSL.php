@@ -15,7 +15,20 @@ protected $data = array (
         array (
             'name' => 'prestacion_id',
             'label' => 'Tipo de Prestación',
-            'presentation' => 'PRESTACIONES',
+            'presentation' => 'SELECT',
+            'classparams' => '{\'model\':\'Reclamos.Prestacion\',\'conditions\':{\'Prestacion.competencia\':[\'LUMINARIAS\',\'ESCOMBROS\',\'BALDIOS\',\'ESPACIOS VERDES\',\'POSTES\']}}',
+        ),
+        1 => 
+        array (
+            'name' => 'estado',
+            'label' => 'Estado',
+            'presentation' => 'ESTADOS_RECLAMOS',
+        ),
+        2 => 
+        array (
+            'name' => 'fecha',
+            'label' => 'Estado',
+            'presentation' => 'DATE',
         ),
     ),
     'columns' => 
@@ -99,8 +112,7 @@ protected $data = array (
                 array (
                     'name' => 'fecha',
                     'label' => 'Fecha de Relevamiento',
-                    'presentation' => 'SELECT',
-                    'classparams' => '{\'model\':\'Reclamos.Prestacion\'}',
+                    'presentation' => 'DATE',
                 ),
             ),
         ),

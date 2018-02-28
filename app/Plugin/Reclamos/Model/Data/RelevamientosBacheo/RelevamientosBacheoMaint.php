@@ -28,6 +28,7 @@ protected $data = array (
                     'name' => 'fecha',
                     'label' => 'Fecha',
                     'presentation' => 'DATE',
+                    'classparams' => '{\'force\':true}',
                 ),
                 1 => 
                 array (
@@ -45,6 +46,7 @@ protected $data = array (
                     'name' => 'estado',
                     'label' => 'Estado',
                     'presentation' => 'ESTADOS_RECLAMOS',
+                    'initialvalue' => 'Iniciado',
                 ),
                 4 => 
                 array (

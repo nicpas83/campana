@@ -26,12 +26,12 @@
     </search_list>
     
     <tablemaint file="RelevamientosMaint.php">
-        <fieldset title="Datos del Reclamo" columns="2" id="reclamo">
-            <field name="fecha" label="Fecha" presentation="DATE" />
+       <fieldset title="Datos del Reclamo" columns="2" id="reclamo">
+            <field name="fecha" label="Fecha" presentation="DATE" classparams="{'force':true}"/>
             <field name="vecino" label="Nombre del Vecino"  />
             <field name="vecino_telefono" label="Teléfono del Vecino" presentation="INT" />
-            <field name="estado" label="Estado" presentation="ESTADOS_RECLAMOS" />
-            <field name="prestacion_id" label="Tipo de Prestación" presentation="SELECT" classparams="{'model':'Reclamos.Prestacion','conditions':{'Prestacion.competencia':['LUMINARIAS','ESCOMBROS','BALDIOS','ESPACIOS VERDES','POSTES']}}"/>
+            <field name="estado" label="Estado" presentation="ESTADOS_RECLAMOS" initialvalue="Iniciado" />
+            <field name="prestacion_id" label="Tipo de Prestación" presentation="SELECT" classparams="{'model':'Reclamos.Prestacion','conditions':{'Prestacion.competencia':'ARBOLADO'}}"/>
         </fieldset>
         <fieldset title="Ubicación del Reclamo" id="ubicacion">
             <field name="direccion" label="Dirección" />

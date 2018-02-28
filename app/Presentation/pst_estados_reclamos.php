@@ -6,9 +6,9 @@ class pst_estados_reclamos extends pst_selectarray {
 
     public function __construct($settings) {
         $this->options = array(
-            'Inicial' => 'Inicial',
-            'Verificación' => 'Verificación',
-            'Planificación' => 'Planificación',
+            'Iniciado' => 'Iniciado',
+            'Verificado' => 'Verificado',
+            'Planificado' => 'Planificado',
             'Resuelto' => 'Resuelto',
             'Inexistente' => 'Inexistente',
             
